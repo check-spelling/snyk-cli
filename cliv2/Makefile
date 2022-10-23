@@ -25,7 +25,7 @@ SRCS = $(shell find $(WORKING_DIR) -type f -name '*.go')
 # load cached variables if available
 -include $(CACHE_DIR)/variables.mk
 
-# the platform string used by the deployed binaries is not excatly OS-ARCH so we need to translate a bit
+# the platform string used by the deployed binaries is not exactly OS-ARCH so we need to translate a bit
 _GO_OS = $(GOOS)
 _V1_OS = $(GOOS)
 _V1_ARCH = $(GOARCH)
@@ -35,7 +35,7 @@ _SEPARATOR = _
 
 ifeq ($(_V1_OS), darwin)
 	_V1_OS = macos
-#temporarily irgnoring any architecture for macos v1 binaries, this will enable to natively compile v2 as darwin arm64 and bundle v1 as amd64
+#temporarily ignoring any architecture for macos v1 binaries, this will enable to natively compile v2 as darwin arm64 and bundle v1 as amd64
 	_V1_ARCH = 
 else ifeq ($(_V1_OS), windows)
 	_V1_OS = win

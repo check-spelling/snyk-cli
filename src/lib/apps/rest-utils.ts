@@ -21,7 +21,7 @@ export function getAppsURL(
   opts: IGetAppsURLOpts = {},
 ): string {
   // Get the rest URL from user config
-  // Environment variable takes precendence over config
+  // Environment variable takes precedence over config
   const baseURL = config.API_REST_URL;
   debug(`API rest base URL => ${baseURL}`);
 
@@ -64,7 +64,7 @@ export function handleRestError(error: any): void {
 /**
  * @param errRes RestError response
  * @returns {String} Iterates over error and
- * converts them into a readible string
+ * converts them into a readable string
  */
 function errorsToDisplayString(errRes: IRestErrorResponse): string {
   const resString = `Uh oh! an error occurred while trying to create the Snyk App.
@@ -87,7 +87,7 @@ Please run the command with '--debug' or '-d' to get more information`;
     const meta = metaString || '-';
     const source = sourceString || '-';
 
-    return `Uh oh! an error occured while trying to create the Snyk App.
+    return `Uh oh! an error occurred while trying to create the Snyk App.
 
 Error Description:\t${e.detail}
 Request Status:\t${e.status}

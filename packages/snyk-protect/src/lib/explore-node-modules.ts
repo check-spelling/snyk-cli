@@ -4,7 +4,7 @@ import { FoundPhysicalPackage } from './types';
 
 /**
  * Check if a physical module (given by folderPath) is one of the package names we are interested in for patching.
- * If it is, capture it as a FoundPhysicalPackage containg the name, version, and path
+ * If it is, capture it as a FoundPhysicalPackage containing the name, version, and path
  * @param folderPath the physical path of the module under consideration.
  * @param packageNamesOfInterest a list of package names we are considering for patching.
  * @returns a FoundPhysicalPackage if the module at the given path has a package name which we are considering for patching.
@@ -37,7 +37,7 @@ function checkPhysicalModule(
 }
 
 /**
- * Explore the node_modules of a project, starting with the given path and recusively exploring deeper,
+ * Explore the node_modules of a project, starting with the given path and recursively exploring deeper,
  * looking for modules which match the package names we are considering for patching.
  * @param pathToCheck the path to look for a matching module.
  * @param packageNamesOfInterest - a list of package names we are considering for patching.

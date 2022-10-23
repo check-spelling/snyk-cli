@@ -40,7 +40,7 @@ function getExpressions(
   expressions: Record<string, TerraformPlanExpression>,
 ): Record<string, string> {
   const result: Record<string, string> = {};
-  // expressions can be nested. we are only doing 1 depth to resolve top level depenencies
+  // expressions can be nested. we are only doing 1 depth to resolve top level dependencies
   for (const key of Object.keys(expressions)) {
     const referenceKey = getReference(expressions[key]);
     if (referenceKey) {
@@ -51,7 +51,7 @@ function getExpressions(
 }
 
 // this is very naive implementation
-// the referenences can be composed of number of keys
+// the references can be composed of number of keys
 // we only going to use the first reference for time being
 function getReference(value: TerraformPlanExpression): string {
   return value.references?.[0];
@@ -113,7 +113,7 @@ function referencedResourcesResolver(
     if (resolvedResource && expressions) {
       const resourceExpressions = getExpressions(expressions);
       for (const key of Object.keys(resourceExpressions)) {
-        // only add non existing attributes. If we already have resolved value do not overwrite it with reference
+        // only add nonexistent attributes. If we already have resolved value do not overwrite it with reference
         if (!resolvedResource[key]) {
           resolvedResource[key] = resourceExpressions[key];
         }
